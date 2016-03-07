@@ -1,0 +1,166 @@
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body ng-app="Portfolio" ng-controller="PortfolioController">
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">RP</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">About Me <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">References</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid body">
+  <div class="row intro">
+    <div class="jumbotron">
+      <div class="text-center"><h1>Ronald Porch</h1></div>
+      <div class="text-center"><h2>Software Developer</h2></div>
+    </div>
+  </div>
+  <div class="row about-me">
+    
+  </div>
+  <div class="row skills">
+    <div ng-repeat="language in languages" class="col-md-3 col-sm-6">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+              <div class="media-object"><span class="{{language.icon}}" style="font-size: 80px;"></span></div>
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{language.name}}</h4>
+          <p>{{language.description}}</p>
+        </div>
+      </div>
+    </div>
+    <div ng-repeat="framework in frameworks" class="col-md-3 col-sm-6">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+              <img class="media-object" src="http://placehold.it/80x80">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{framework.name}}</h4>
+          <p>{{framework.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript">
+  var app = angular.module('Portfolio', []);
+  app.controller('PortfolioController', ['$scope', function($scope){
+    $scope.languages = [
+      {
+        name: "HTML5/CSS3",
+        description: "Doing stuff with HTML5 and CSS3",
+        icon: "devicon-html5-plain-wordmark colored"
+      },
+      {
+        name: "Javascript",
+        description: "Doing stuff with Javascript",
+        icon: "devicon-javascript-plain colored"
+      },
+      {
+        name: "PHP",
+        description: "Doing stuff with PHP",
+        icon: "devicon-php-plain colored"
+      },
+      {
+        name: "SQL",
+        description: "Doing stuff with MySQL and PostgreSQL",
+        icon: "devicon-postgresql-plain colored"
+      },
+      {
+        name: "Ruby",
+        description: "Certified in Ruby on November 2014"
+      },
+      {
+        name: "Swift",
+        description: "Doing stuff with Swift"
+      },
+      {
+        name: "Git",
+        description: "Doing stuff with Git"
+      },
+      {
+        name: "日本語",
+        description: "プログラミング言語じゃないだけど僕は日本語が３年勉強している。"
+      },
+    ]
+    $scope.frameworks = [
+      {
+        name: "AngularJS",
+        description: "Doing stuff in AngularJS"
+      },
+      {
+        name: "NodeJS",
+        description: "Doing stuff in AngularJS"
+      },
+      {
+        name: "JS Test Suites",
+        description: "Mocha, Chai, Jasmine, Protractor"
+      },
+      {
+        name: "Symfony",
+        description: "Doing stuff in AngularJS"
+      },
+      {
+        name: "PHPUnit",
+        description: "Doing stuff in AngularJS"
+      },
+      {
+        name: "Ruby on Rails",
+        description: "Certified in Ruby on Rails on November 2014"
+      },
+      {
+        name: "MiniSpec/Test",
+        description: "Certified in Ruby on Rails on November 2014"
+      },
+      {
+        name: "iOS/Swift",
+        description: "Doing stuff in AngularJS"
+      },
+    ]
+  }])
+</script>
+
+<style type="text/css">
+  .navbar-default {
+    border-radius: 0px;
+  }
+  .body {
+    margin-top: 50px;
+  }
+  .jumbotron {
+    border-radius: 0px;
+  }
+</style>
+</html>
+
