@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer')
 
-var transportUrl = "smtps://user%40gmail.com:password@smtp.gmail.com"
+var transportUrl = "smtps://dada5714%40gmail.com:ProjectRose1@smtp.gmail.com"
 var transporter = nodemailer.createTransport(transportUrl)
 
 /* GET home page. */
