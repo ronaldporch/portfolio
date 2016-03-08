@@ -20,6 +20,7 @@ router.post('/sendEmail', function(req, res, next){
 	}
 	transporter.sendMail(mailOptions, function(err, info){
 		if(err){
+			console.log(err)
 			return res.json({error: err})
 		}
 		console.log('Message Sent: ' + info.response)
