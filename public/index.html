@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title></title>
+  <title>Ronald Porch</title>
 </head>
 <body ng-app="Portfolio" ng-controller="PortfolioController">
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -112,7 +112,7 @@
     </div>
     <div ng-repeat="project in projects" class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src="http://placehold.it/300x300" alt="..." class="thumbnail">
+        <a href="{{project.url}}"><img src="{{project.logoUrl}}" alt="..." class="thumbnail" style="height: 300px; width: 300px;"></a>
         <div class="caption">
           <a href="{{project.url}}"><h3>{{project.name}}</h3></a>
           <p>{{project.description}}</p>
@@ -277,6 +277,7 @@
     $scope.projects = [
       {
         name: "Claimatic",
+        logoUrl: "/images/iTunesArtwork@2x.png",
         description: "Application that assigns insurance claims to adjusters. Maintain legacy PHP application while porting old code and any new changes to Symfony. Introduced modern software development factors like unit testing, git/github, agile development, etc. Prototyped major new features using AngularJS and NodeJS.",
         url: "http://www.claimatic.com/",
         libraries: [
@@ -292,6 +293,7 @@
       },
       {
         name: "Claimatic (iOS)",
+        logoUrl: "/images/iTunesArtwork@2x.png",
         description: "iOS component of Claimatic. Allows desk adjusters to receive instantaneous feedback from field adjusters on their location (via Apple's CoreLocation). Also gives field adjusters the ability to get directions to a claim, check in or out of a claimsend snapshot reports on their findings on the field, and more. Takes advantage of Swift Libraries SwiftyJSON, Alamofire, and KeychainSwift. Written in Swift. Can be find on the iTunes App Store.",
         url: "http://www.claimatic.com/",
         libraries: [
@@ -311,6 +313,7 @@
       },
       {
         name: "Casino Night",
+        logoUrl: "http://placehold.it/300x300",
         description: "Personal Project. Allows users to place bets using credits bought with real money on various video game/e-sport matches. Streamers are able to create events that then tie to their streaming service in which users are able to ante into. Plan to integrate challonge.com to handle brackets. Written using Node.js and AngularJS. Takes full advantage of Websockets using the socket.io library.",
         libraries: [
           {
