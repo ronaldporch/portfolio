@@ -53,7 +53,7 @@
       },
       {
         name: "Claimatic (iOS)",
-        logoUrl: "/images/iTunesArtwork@2x.png",
+        logoUrl: "/images/claimaticlogoinverted.png",
         description: "iOS component of Claimatic. Allows desk adjusters to receive instantaneous feedback from field adjusters on their location (via Apple's CoreLocation). Also gives field adjusters the ability to get directions to a claim, check in or out of a claimsend snapshot reports on their findings on the field, and more. Takes advantage of Swift Libraries SwiftyJSON, Alamofire, and KeychainSwift. Written in Swift. Can be find on the iTunes App Store.",
         url: "https://itunes.apple.com/us/app/claimatic/id1074354263?mt=8&ign-mpt=uo%3D4",
         libraries: [
