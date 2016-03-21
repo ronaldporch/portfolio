@@ -1,0 +1,31 @@
+  .my-picture {
+    border-radius: 100px;
+  }
+  .navbar-default {
+    border-radius: 0px;
+  }
+  .body {
+    margin-top: 50px;
+  }
+  .jumbotron {
+    border-radius: 0px;
+    background-image: url("https://images.unsplash.com/photo-1456996290209-634ae6b8be31?crop=entropy&fit=crop&fm=jpg&h=825&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=875");
+    background-size: cover;
+  }
+
+  .jumbotron h1, .jumbotron h2{
+    color: #CCC;
+  }
+  .media {
+    margin-bottom: 15px;
+  }
+
+  .body-footer {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #333;
+    height: 200px;
+  }
+  .footer-text {
+    color: #BBB;
+  }

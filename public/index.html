@@ -1,487 +1,175 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Ronald Porch</title>
-</head>
-<body ng-app="Portfolio" ng-controller="PortfolioController">
-  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">RP</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#About-Me">About Me</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li><a href="#Projects">Projects</a></li>
-        <li><a href="#References">References</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<div class="container-fluid body">
-  <div class="row intro">
-    <div class="jumbotron">
-      <div class="text-center"><h1>Ronald Porch</h1></div>
-      <div class="text-center"><h2>Software Developer</h2></div>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row about-me">
-    <div class="col-sm-12">
-      <h1><a name="About-Me"></a>About Me</h1>
-      <hr>
-      <div class="col-sm-12 text-center">
-        <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/8/005/076/06a/17733c8.jpg" style="height: 175px; width: 175px;" alt="..." class="my-picture">
-      </div>
-      <div class="col-sm-8 col-sm-offset-2 text-center">
-        <br>
-        <p>
-          I'm just a developer who likes to solve any problem that's in his way. If there's a way to do it in code, then it's going to be tested, solved, refactored, and solved again.
-        </p>
-        <p>
-          I gained most of my passion and knowledge of software development from <a href="http://www.codefellows.org/">Code Fellows</a>, a coding bootcamp in the lovely city of Seattle. I graduated with a certificate in Ruby on Rails which a heavy focus on Javascript frameworks. I think I fell in love with AngularJS then. Ever since, I've been learning as much as I can about all the cool buzzwordy frameworks that are all aiming towards one goal: a modern web ecosystem that is responsive and can communicate across platforms, mobile, desktop, tablet and more.
-        </p>
-        <p>
-          Since graduating, I've been spending my time sharpening my toolset along with developing new skills, like iOS/Swift App development. But when I'm not doing that, I love to read, study Japanese, and being near water.
-        </p>
-        <p>
-          I hope to hear from you soon.
-        </p>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ronald Porch</title>
+  </head>
+  <body ng-app="Portfolio" ng-controller="PortfolioController">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <div ng-include src="'partials/nav.html'"></div>
+    <div class="container-fluid body">
+      <div class="row intro">
+        <div class="jumbotron">
+          <div class="text-center"><h1>Ronald Porch</h1></div>
+          <div class="text-center"><h2>Software Developer</h2></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row skills">
-    <div class="col-sm-12">
-      <h1><a name="Skills"></a>Skills</h1>
-      <hr>
-    </div>
-    <div class="col-sm-2">
-      <h3>Languages</h3>
-    </div>
-    <div class="col-sm-10">
-      <div ng-repeat="language in languages" class="col-md-3 col-sm-6">
-        <div class="media">
-          <div class="media-left">
-            <div class="media-object">
-              <span class="{{language.icon}}" style="font-size: 80px;"></span>
-              <span ng-show="!language.icon" style="font-size: 80px">語</span>
-            </div>
+    <div class="container">
+      <div class="row about-me">
+        <div class="col-sm-12">
+          <h1><a name="About-Me"></a>About Me</h1>
+          <hr>
+          <div class="col-sm-12 text-center">
+            <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/8/005/076/06a/17733c8.jpg" style="height: 175px; width: 175px;" alt="..." class="my-picture">
           </div>
-          <div class="media-body">
-            <h4 class="media-heading">{{language.name}} 
-              <small>{{language.years}}
-                <span ng-show="language.years == 1 && language.name != '日本語'"> Year</span>
-                <span ng-show="language.years > 1 && language.name != '日本語'"> Years</span>
-                <span ng-show="language.name == '日本語'">年</span>
-              </small>
-            </h4>
-            <p>{{language.description}}</p>
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <br>
+            <p>
+              I'm just a developer who likes to solve any problem that's in his way. If there's a way to do it in code, then it's going to be tested, solved, refactored, and solved again.
+            </p>
+            <p>
+              I gained most of my passion and knowledge of software development from <a href="http://www.codefellows.org/">Code Fellows</a>, a coding bootcamp in the lovely city of Seattle. I graduated with a certificate in Ruby on Rails which a heavy focus on Javascript frameworks. I think I fell in love with AngularJS then. Ever since, I've been learning as much as I can about all the cool buzzwordy frameworks that are all aiming towards one goal: a modern web ecosystem that is responsive and can communicate across platforms, mobile, desktop, tablet and more.
+            </p>
+            <p>
+              Since graduating, I've been spending my time sharpening my toolset along with developing new skills, like iOS/Swift App development. But when I'm not doing that, I love to read, study Japanese, and being near water.
+            </p>
+            <p>
+              I hope to hear from you soon.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-2">
-      <h3>Tools and Frameworks</h3>
-    </div>
-    <div class="col-sm-10">
-      <div ng-repeat="framework in frameworks" class="col-md-3 col-sm-6">
-        <div class="media">
-          <div class="media-left">
-            <div class="media-object">
-              <span class="{{framework.icon}}" style="font-size: 80px;"></span>
-            </div>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">{{framework.name}}</h4>
-            <p>{{framework.description}}</p>
-          </div>
+      <div class="row skills">
+        <div class="col-sm-12">
+          <h1><a name="Skills"></a>Skills</h1>
+          <hr>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="row projects">
-    <div class="col-sm-12">
-      <h1><a name="Projects"></a>Projects</h1>
-      <hr>
-    </div>
-    <div ng-repeat="project in projects" class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <a href="{{project.url}}"><img src="{{project.logoUrl}}" alt="..." class="thumbnail" style="height: 300px; width: 300px;"></a>
-        <div class="caption">
-          <a href="{{project.url}}"><h3>{{project.name}}</h3></a>
-          <p>{{project.description}}</p>
-          <h5>Some Libraries Used</h5>
-          <ul>
-            <li ng-repeat="library in project.libraries">
-              <a href="{{library.url}}">{{library.name}}</a>
-            </li>
-          </ul>
+        <div class="col-sm-2">
+          <h3>Languages</h3>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="row references">
-    <div class="col-sm-12">
-      <h1><a name="References"></a>References</h1>
-      <hr>
-    </div>
-    <div ng-repeat="reference in references track by $index" class="col-sm-12">
-      <div class="media">
-        <div ng-show="$index % 2 == 0" class="media-left">
-          <a href="#">
-            <img class="media-object thumbnail" src="http://placehold.it/150x150" alt="...">
-          </a>
-        </div>
-        <div class="media-body text-justify">
-          <h4 class="media-heading">"{{reference.copy}}"</h4>
-          <h4><small>{{reference.name}}, {{reference.position}}</small></h4>
-        </div>
-        <div ng-show="$index % 2 == 1" class="media-right">
-          <a href="#">
-            <img class="media-object thumbnail" src="http://placehold.it/150x150" alt="...">
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="text-center"><h3>Any other references may be seen at request.</h3></div>
-  </div>
-  <div>
-    <div class="col-sm-12">
-      <h1><a name="Contact"></a>Contact</h1>
-      <hr>
-    </div>
-    <div class="text-center">
-      <div>
-        <h3>Follow me on these social media:</h3>
-      </div>
-      <a ng-repeat="medium in media" href="{{medium.url}}"><span class="fa {{medium.icon}}" style="font-size: 120px;"></span></a>
-      <div>
-        <h3>Or <a href="" data-toggle="modal" data-target="#myModal">Send me an Email</a></h3>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Send Me an Email</h4>
-              </div>
-              <div class="modal-body">
-                <div>
-                  <div ng-show="sendingEmail == true" class="progress">
-                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                      <span class="sr-only">100% Complete</span>
-                      <span>Sending Email. Please Wait...</span>
-                    </div>
-                  </div>
-                  <div ng-show="sendingEmail == false && emailSent == true">
-                    Email Sent!
-                  </div>
-                  <form class="form-horizontal" ng-submit="sendEmail()">
-                    <div ng-show="sendingEmail == false && emailSent == false">
-                      <div class="text-center">
-                        Send me an email and I will respond to you as soon as I can!
-                        <hr>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
-                        <div class="col-sm-10">
-                          <input type="text" ng-model="email.name" class="form-control" id="inputEmail3" placeholder="Awesome Name" required>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-10">
-                          <input type="email"  ng-model="email.email" class="form-control" id="inputEmail3" placeholder="totally@awesome.com" required>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">Text</label>
-                        <div class="col-sm-10">
-                          <textarea class="form-control" ng-model="email.email_body" rows="3" placeholder="Your Totally Awesome Email" required></textarea>
-                        </div>
-                      </div>
-                    </div>
+        <div class="col-sm-10">
+          <div ng-repeat="language in languages" class="col-md-3 col-sm-6">
+            <div class="media">
+              <div class="media-left">
+                <div class="media-object">
+                  <span class="{{language.icon}}" style="font-size: 80px;"></span>
+                  <span ng-show="!language.icon" style="font-size: 80px">語</span>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button ng-show="emailSent == true || sendingEmail == false" type="button" class="btn btn-default" data-dismiss="modal" ng-click="resetEmail()">Close</button>
-                <button ng-show="emailSent == false && sendingEmail == false" type="submit" class="btn btn-primary">Send Email</button>
+              <div class="media-body">
+                <h4 class="media-heading">{{language.name}} 
+                  <small>{{language.years}}
+                    <span ng-show="language.years == 1 && language.name != '日本語'"> Year</span>
+                    <span ng-show="language.years > 1 && language.name != '日本語'"> Years</span>
+                    <span ng-show="language.name == '日本語'">年</span>
+                  </small>
+                </h4>
+                <p>{{language.description}}</p>
               </div>
-              </form>
             </div>
           </div>
         </div>
-        <div>
-          <form>
-
-          </form>
+        <div class="col-sm-2">
+          <h3>Tools and Frameworks</h3>
+        </div>
+        <div class="col-sm-10">
+          <div ng-repeat="framework in frameworks" class="col-md-3 col-sm-6">
+            <div class="media">
+              <div class="media-left">
+                <div class="media-object">
+                  <span class="{{framework.icon}}" style="font-size: 80px;"></span>
+                </div>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">{{framework.name}}</h4>
+                <p>{{framework.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row projects">
+        <div class="col-sm-12">
+          <h1><a name="Projects"></a>Projects</h1>
+          <hr>
+        </div>
+        <div ng-repeat="project in projects" class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <a href="{{project.url}}"><img src="{{project.logoUrl}}" alt="..." class="thumbnail" style="height: 300px; width: 300px;"></a>
+            <div class="caption">
+              <a href="{{project.url}}"><h3>{{project.name}}</h3></a>
+              <p>{{project.description}}</p>
+              <h5>Some Libraries Used</h5>
+              <ul>
+                <li ng-repeat="library in project.libraries">
+                  <a href="{{library.url}}">{{library.name}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row references">
+        <div class="col-sm-12">
+          <h1><a name="References"></a>References</h1>
+          <hr>
+        </div>
+        <div ng-repeat="reference in references track by $index" class="col-sm-12">
+          <div class="media">
+            <div ng-show="$index % 2 == 0" class="media-left">
+              <a href="#">
+                <img class="media-object thumbnail" src="http://placehold.it/150x150" alt="...">
+              </a>
+            </div>
+            <div class="media-body text-justify">
+              <h4 class="media-heading">"{{reference.copy}}"</h4>
+              <h4><small>{{reference.name}}, {{reference.position}}</small></h4>
+            </div>
+            <div ng-show="$index % 2 == 1" class="media-right">
+              <a href="#">
+                <img class="media-object thumbnail" src="http://placehold.it/150x150" alt="...">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center"><h3>Any other references may be seen at request.</h3></div>
+      </div>
+      <div>
+        <div class="col-sm-12">
+          <h1><a name="Contact"></a>Contact</h1>
+          <hr>
+        </div>
+        <div class="text-center">
+          <div>
+            <h3>Follow me on these social media:</h3>
+          </div>
+          <a ng-repeat="medium in media" href="{{medium.url}}">
+            <span class="fa {{medium.icon}}" style="font-size: 120px;"></span>
+          </a>
+          <div>
+            <h3>Or <a href="" data-toggle="modal" data-target="#myModal">Send me an Email</a></h3>
+            <div ng-include src="'partials/email-modal.html'"></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="container-fluid body-footer">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 text-right">
-      <div class="footer-text">&copy Ronald Porch</div>
-      <div class="footer-text">Icons supplied by <a href="http://devicon.fr/">DevIcons</a> and <a href="https://fortawesome.github.io/Font-Awesome/">Font Awesome</a></div>
-      <div class="footer-text">Jumbotron Picture by <a href="https://unsplash.com/photos/inh3oOPOOjQ">Aliis Sinisalu</a></div>
+    <div class="container-fluid body-footer">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-right">
+          <div class="footer-text">&copy Ronald Porch</div>
+          <div class="footer-text">Icons supplied by <a href="http://devicon.fr/">DevIcons</a> and <a href="https://fortawesome.github.io/Font-Awesome/">Font Awesome</a></div>
+          <div class="footer-text">Jumbotron Picture by <a href="https://unsplash.com/photos/inh3oOPOOjQ">Aliis Sinisalu</a></div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</body>
-<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  var app = angular.module('Portfolio', []);
-  app.controller('PortfolioController', ['$scope', '$http', function($scope, $http){
-    $scope.resetEmail = function(){
-      $scope.emailSent = false;
-      $scope.sendingEmail = false;
-    }
-    $scope.emailSent = false;
-    $scope.sendingEmail = false;
-    $scope.sendEmail = function(){
-      $scope.sendingEmail = true;
-      $http.post('/sendEmail', $scope.email)
-        .then(function(res){
-          $scope.sendingEmail = false;
-          $scope.emailSent = true;
-        })
-        .then(function(err){
-          console.log(err)
-        })
-    }
-    $scope.media = [
-      {
-        name: "LinkedIn",
-        icon: "fa-linkedin-square",
-        url: "https://linkedin.com/in/ronaldporch"
-      },
-      {
-        name: "Github",
-        icon: "fa-github-square",
-        url: "https://github.com/ronaldporch"
-      },
-      {
-        name: "LinkedIn",
-        icon: "fa-twitter-square",
-        url: "https://twitter.com/dada5714"
-      }
-    ]
-    $scope.projects = [
-      {
-        name: "Claimatic",
-        logoUrl: "/images/iTunesArtwork@2x.png",
-        description: "Application that assigns insurance claims to adjusters. Maintain legacy PHP application while porting old code and any new changes to Symfony. Introduced modern software development factors like unit testing, git/github, agile development, etc. Prototyped major new features using AngularJS and NodeJS.",
-        url: "http://www.claimatic.com/",
-        libraries: [
-          {
-            name: "Google Maps",
-            url: "https://developers.google.com/maps/"
-          },
-          {
-            name: "Data Tables",
-            url: "https://www.datatables.net/"
-          },
-        ],
-      },
-      {
-        name: "Claimatic (iOS)",
-        logoUrl: "/images/iTunesArtwork@2x.png",
-        description: "iOS component of Claimatic. Allows desk adjusters to receive instantaneous feedback from field adjusters on their location (via Apple's CoreLocation). Also gives field adjusters the ability to get directions to a claim, check in or out of a claimsend snapshot reports on their findings on the field, and more. Takes advantage of Swift Libraries SwiftyJSON, Alamofire, and KeychainSwift. Written in Swift. Can be find on the iTunes App Store.",
-        url: "https://itunes.apple.com/us/app/claimatic/id1074354263?mt=8&ign-mpt=uo%3D4",
-        libraries: [
-          {
-            name: "Alamofire",
-            url: "https://github.com/Alamofire/Alamofire"
-          },
-          {
-            name: "SwiftyJSON",
-            url: "https://github.com/SwiftyJSON/SwiftyJSON"
-          },
-          {
-            name: "KeychainSwift",
-            url: "https://github.com/marketplacer/keychain-swift"
-          }
-        ]
-      },
-      {
-        name: "Casino Night",
-        logoUrl: "http://placehold.it/300x300",
-        description: "Personal Project. Allows users to place bets using credits bought with real money on various video game/e-sport matches. Streamers are able to create events that then tie to their streaming service in which users are able to ante into. Plan to integrate challonge.com to handle brackets. Written using Node.js and AngularJS. Takes full advantage of Websockets using the socket.io library.",
-        libraries: [
-          {
-            name: "socket.io",
-            url: "http://socket.io"
-          },
-          {
-            name: "Twitter API",
-            url: "https://www.npmjs.com/package/twitter"
-          },
-          {
-            name: "Node Mailer",
-            url: "https://github.com/nodemailer/nodemailer"
-          }
-        ],
-        url: "http://casinonight.herokuapp.com"
-      }
-    ]
-    $scope.references = [
-      {
-        copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus bibendum commodo magna quis rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi quis gravida metus. Nam nec quam nisi. Mauris eu quam lacinia, fringilla nisl eu, faucibus est. Mauris ut accumsan nisi, sed consequat metus. In rhoncus nunc quis ornare laoreet. Donec rhoncus, felis quis maximus pellentesque, ligula sapien lacinia nunc, non volutpat est urna a metus. Mauris varius ante eu suscipit fermentum.",
-        name: "Ronald Porch",
-        position: "Software Developer"
-      },
-      {
-        copy: "Lore ipsum dolor sit amet, consectetur adipiscing elit. Phasellus bibendum commodo magna quis rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi quis gravida metus. Nam nec quam nisi. Mauris eu quam lacinia, fringilla nisl eu, faucibus est. Mauris ut accumsan nisi, sed consequat metus. In rhoncus nunc quis ornare laoreet. Donec rhoncus, felis quis maximus pellentesque, ligula sapien lacinia nunc, non volutpat est urna a metus. Mauris varius ante eu suscipit fermentum.",
-        name: "Ronald Porch",
-        position: "Software Developer"
-      }
-    ]
-    $scope.languages = [
-      {
-        name: "HTML5/CSS3",
-        years: 4,
-        description: "Death to Flash.",
-        icon: "devicon-html5-plain-wordmark colored"
-      },
-      {
-        name: "Javascript",
-        years: 3,
-        description: "Javascript Diehard. <3",
-        icon: "devicon-javascript-plain colored"
-      },
-      {
-        name: "PHP",
-        years: 2,
-        description: "It gets the job done.",
-        icon: "devicon-php-plain colored"
-      },
-      {
-        name: "SQL",
-        years: 3,
-        description: "Can't have a website without Data. Good Data.",
-        icon: "devicon-postgresql-plain colored"
-      },
-      {
-        name: "Ruby",
-        years: 2,
-        description: "Certified in Ruby on November 2014",
-        icon: "devicon-ruby-plain colored"
-      },
-      {
-        name: "Swift",
-        years: 2,
-        description: "Think Quick or Nimble. Not Taylor.",
-        icon: "devicon-apple-original colored"
-      },
-      {
-        name: "Git",
-        years: 2,
-        description: "Always push to branch. Never to master.",
-        icon: "devicon-git-plain colored"
-      },
-      {
-        name: "日本語",
-        years: 3,
-        description: "プログラミング言語じゃないだけど僕は日本語が３年勉強している。"
-      },
-    ]
-    $scope.frameworks = [
-      {
-        name: "JQuery",
-        description: "Javascript made friendly.",
-        icon: "devicon-jquery-plain colored"
-      },    
-      {
-        name: "AngularJS",
-        description: "Almost every app I've made uses it.",
-        icon: "devicon-angularjs-plain colored"
-      },
-      {
-        name: "NodeJS",
-        description: "Makes creating a restful API server simple.",
-        icon: "devicon-nodejs-plain colored"
-      },
-      {
-        name: "Symfony",
-        description: "Converting Legacy PHP Applications to MVC all day",
-        icon: "devicon-symfony-original colored"
-      },
-      {
-        name: "Ruby on Rails",
-        description: "Certified in Ruby on Rails on November 2014",
-        icon: "devicon-rails-plain colored"
-      },
-      {
-        name: "Bootstrap",
-        description: "Because they know better than me for styling.",
-        icon: "devicon-bootstrap-plain colored"
-      },
-      {
-        name: "Less",
-        description: "Because variables in CSS make sense.",
-        icon: "devicon-less-plain-wordmark colored"
-      },
-      {
-        name: "iOS/Swift",
-        description: "Sole developer for Claimatic iOS",
-        icon: "devicon-apple-original colored"
-      }
-    ]
-  }])
-</script>
-
-<style type="text/css">
-  .my-picture {
-    border-radius: 100px;
-  }
-  .navbar-default {
-    border-radius: 0px;
-  }
-  .body {
-    margin-top: 50px;
-  }
-  .jumbotron {
-    border-radius: 0px;
-    background-image: url("https://images.unsplash.com/photo-1456996290209-634ae6b8be31?crop=entropy&fit=crop&fm=jpg&h=825&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=875");
-    background-size: cover;
-  }
-
-  .jumbotron h1, .jumbotron h2{
-    color: #CCC;
-  }
-  .media {
-    margin-bottom: 15px;
-  }
-
-  .body-footer {
-    margin-top: 30px;
-    padding: 30px;
-    background-color: #333;
-    height: 200px;
-  }
-  .footer-text {
-    color: #BBB;
-  }
-</style>
+  </body>
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 </html>
 
